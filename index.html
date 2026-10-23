@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML, SVG, CSS Y JS</title>
+  <style>
+    body {font-family: "Times New Roman", Georgia, serif;}
+      margin: 0;
+      padding: 20px;
+      font-family: 'Times New Roman', serif;
+      background: #fff;
+    }
+    h1 {
+      font-size: 20px;
+      text-align: center;
+    }
+    .grafico {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .grafico svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Comparación de instituciones</h1>
+
+  <div class="grafico">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 580" font-family="'Times New Roman', serif">
+      <style>
+        .grid  { fill: none; stroke: lightgray; }
+        .axis  { stroke: #000; }
+        .label { font-size: 12px; text-anchor: middle; dominant-baseline: middle; }
+        .tick  { font-size: 10px; text-anchor: end; dominant-baseline: middle; }
+        .area  { fill-opacity: .2; stroke-width: 1.5; transition: all ease .4s; }
+        .area:hover { fill-opacity: .5; transition: all ease .4s; }
+        .legend-text { font-size: 10px; }
+        .legend-title { font-size: 12px; font-weight: bold; }
+      </style>
+
+      <!-- Centro del radar. Escala: 28.5 px por cada 10 unidades (0 a 100 = 285 px) -->
+      <g transform="translate(350 310)">
+
+        <!-- Círculos de la cuadrícula -->
+        <g class="grid">
+          <circle r="28.5"/>
+          <circle r="57"/>
+          <circle r="85.5"/>
+          <circle r="114"/>
+          <circle r="142.5"/>
+          <circle r="171"/>
+          <circle r="199.5"/>
+          <circle r="228"/>
+          <circle r="256.5"/>
+          <circle r="285"/>
+        </g>
+
+        <!-- Ejes radiales -->
+        <g class="axis">
+          <line x2="0" y2="-285"/>
+          <line x2="271.1" y2="-88.1"/>
+          <line x2="167.5" y2="230.6"/>
+          <line x2="-167.5" y2="230.6"/>
+          <line x2="-271.1" y2="-88.1"/>
+        </g>
+
+        <!-- Nombres de los ejes -->
+        <g>
+          <text class="label" x="0" y="-295">Staff with PhD</text>
+          <text class="label" x="280.6" y="-91.2">Faculty Student</text>
+          <text class="label" x="173.4" y="238.7">International Research Network</text>
+          <text class="label" x="-173.4" y="238.7">Papers Per Faculty</text>
+          <text class="label" x="-280.6" y="-91.2">Citations per Paper</text>
+        </g>
+
+        <!-- Escala vertical -->
+        <g class="tick">
+          <path class="axis" fill="none" d="M-6-285H0V0H-6"/>
+          <text x="-9" y="0">0</text>
+          <text x="-9" y="-28.5">10</text>
+          <text x="-9" y="-57">20</text>
+          <text x="-9" y="-85.5">30</text>
+          <text x="-9" y="-114">40</text>
+          <text x="-9" y="-142.5">50</text>
+          <text x="-9" y="-171">60</text>
+          <text x="-9" y="-199.5">70</text>
+          <text x="-9" y="-228">80</text>
+          <text x="-9" y="-256.5">90</text>
+          <text x="-9" y="-285">100</text>
+        </g>
+
+        <!-- Pontificia Universidad Católica de Chile -->
+        <g fill="#9E0142" stroke="#9E0142">
+          <polygon class="area" points="0,-281 195,-63.3 166.9,229.8 -163.4,224.9 -210.2,-68.3"/>
+          <circle cx="0" cy="-281" r="1.5" stroke="none"/>
+          <circle cx="195" cy="-63.3" r="1.5" stroke="none"/>
+          <circle cx="166.9" cy="229.8" r="1.5" stroke="none"/>
+          <circle cx="-163.4" cy="224.9" r="1.5" stroke="none"/>
+          <circle cx="-210.2" cy="-68.3" r="1.5" stroke="none"/>
+        </g>
+
+        <!-- Universidad de Chile -->
+        <g fill="#FDBE70" stroke="#FDBE70">
+          <polygon class="area" points="0,-205 62.8,-20.4 166.9,229.8 -166.9,229.8 -208.3,-67.7"/>
+          <circle cx="0" cy="-205" r="1.5" stroke="none"/>
+          <circle cx="62.8" cy="-20.4" r="1.5" stroke="none"/>
+          <circle cx="166.9" cy="229.8" r="1.5" stroke="none"/>
+          <circle cx="-166.9" cy="229.8" r="1.5" stroke="none"/>
+          <circle cx="-208.3" cy="-67.7" r="1.5" stroke="none"/>
+        </g>
+
+        <!-- Universidad de Concepción -->
+        <g fill="#BEE5A0" stroke="#BEE5A0">
+          <polygon class="area" points="0,-182 101.8,-33.1 165.8,228.1 -149.9,206.3 -238.7,-77.6"/>
+          <circle cx="0" cy="-182" r="1.5" stroke="none"/>
+          <circle cx="101.8" cy="-33.1" r="1.5" stroke="none"/>
+          <circle cx="165.8" cy="228.1" r="1.5" stroke="none"/>
+          <circle cx="-149.9" cy="206.3" r="1.5" stroke="none"/>
+          <circle cx="-238.7" cy="-77.6" r="1.5" stroke="none"/>
+        </g>
+
+        <!-- Universidad de Santiago de Chile -->
+        <g fill="#5E4FA2" stroke="#5E4FA2">
+          <polygon class="area" points="0,-84 80.8,-26.3 164,225.7 -135.8,186.9 -165.5,-53.8"/>
+          <circle cx="0" cy="-84" r="1.5" stroke="none"/>
+          <circle cx="80.8" cy="-26.3" r="1.5" stroke="none"/>
+          <circle cx="164" cy="225.7" r="1.5" stroke="none"/>
+          <circle cx="-135.8" cy="186.9" r="1.5" stroke="none"/>
+          <circle cx="-165.5" cy="-53.8" r="1.5" stroke="none"/>
+        </g>
+      </g>
+
+      <!-- Leyenda -->
+      <g transform="translate(740 60)">
+        <text class="legend-title">Institution Name</text>
+
+        <rect y="16" width="15" height="15" fill="#9E0142"/>
+        <text class="legend-text" x="20" y="28.5">
+          <tspan x="20">Pontificia Universidad</tspan>
+          <tspan x="20" dy="1.2em">Católica de Chile</tspan>
+        </text>
+
+        <rect y="52.6" width="15" height="15" fill="#FDBE70"/>
+        <text class="legend-text" x="20" y="65.1">Universidad de Chile</text>
+
+        <rect y="73.6" width="15" height="15" fill="#BEE5A0"/>
+        <text class="legend-text" x="20" y="86.1">Universidad de Concepción</text>
+
+        <rect y="94.6" width="15" height="15" fill="#5E4FA2"/>
+        <text class="legend-text" x="20" y="107.1">
+          <tspan x="20">Universidad de Santiago de</tspan>
+          <tspan x="20" dy="1.2em">Chile</tspan>
+        </text>
+      </g>
+    </svg>
+  </div>
+
+</body>
+</html>
